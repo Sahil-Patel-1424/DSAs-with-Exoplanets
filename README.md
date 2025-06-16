@@ -1,5 +1,9 @@
-# DSAs-with-Exoplanets
-I am utilizing NASA's Exoplanet Archive (https://exoplanetarchive.ipac.caltech.edu/) data to create sorting algorithms that sort the data based on the exoplanet's mass.
+# Using Data Structures and Algorithms on Exoplanets
+For this project, I am working with read-world data from NASA's Exoplanet Archive (https://exoplanetarchive.ipac.caltech.edu/), which catalogs thousands of confirmed exoplanets discovered outside of our solar system. My goal is to take this dataset and apply sorting algorithms that organize the exoplanets based on their mass.
+
+The focus here isn't just on sorting - it's about understanding the behavior and efficiency of different algorithms when applied to scientific data. I am starting with one of the most beginner-friendly sorting techniques, Insertion Sort, to establish a baseline for future comparisons with more advanced algorithms like Merge Sort or Quick Sort.
+
+By visualizing and analyzing how each algorithm processes the exoplanet data, especially with varying sizes and distributions, I aim to highlight the strengths and limitations of each method. This project blends basic algorithm design with astronomical data, making it a great learning experience and a practical demonstration of computer science in action.
 
 # Insertion Sort
 The Insertion Sort algorithm is a straightforward sorting algorithm that sorts a list one element at a time. It works similarly to how you would sort playing cards in your hand - by dividing them into two groups: a sorted group and an unsorted group. You then take one card from the unsorted group and insert it into the correct position in the sorted group. Here is how the algorithm works:
@@ -10,7 +14,6 @@ The Insertion Sort algorithm is a straightforward sorting algorithm that sorts a
 4. Continue this process for each element in the entire list until the list is sorted.
   
 <br>
-Since the data I used is randomly ordered, the Time Complexity of this Insertion Sort algorithm is O(n<sup>2</sup>). I chose the Insertion Sort algorithm as a baseline for comparing against more advanced sorting algorithms. It is a simple and easy program to implement, but its efficiency drops as the list grows larger, especially when compared to other sorting algorithms.
+Since the data I used is randomly ordered, the Time Complexity of this Insertion Sort algorithm is O(n<sup>2</sup>). The Insertion Sort algorithm is a simple and easy program to implement, but its efficiency drops as the list grows larger, especially when compared to other sorting algorithms.<br/><br/>
 
-<br> <br>
 More information on the Insertion Sort algorithm: https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/
