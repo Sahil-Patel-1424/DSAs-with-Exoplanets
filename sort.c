@@ -37,12 +37,13 @@ void struct_insertion_sort(struct exoplanet array[], int number_of_elements) {
 
         // first check if j is greater than -1 to make sure we are accessing inside the list of structs
         // then check to see if the previous struct's element's value (mass) is greater than the current's struct element's value (mass)
+        // if the other element is greater than the current element, then perform a swap
         while ((j > -1) && (array[j].mass > element.mass)) {
-            array[j + 1] = array[j];    // perform the swap (move the larger number to the right-most position)
-            j--;                        // subtract 1 from j
+            array[j + 1] = array[j];
+            j--;
         }
 
-        array[j + 1] = element;         // complete the swap (move the smaller number to the left-most position)
+        array[j + 1] = element;
     }
 
     // return with a sorted list of structs
