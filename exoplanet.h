@@ -10,6 +10,7 @@ struct exoplanet {
 
 // function prototypes
 int load_exoplanets(const char *file_name, struct exoplanet array[], int max_count);
+void print_list(struct exoplanet array[], int number_of_elements, char* string);
 void struct_insertion_sort(struct exoplanet array[], int number_of_elements);
 void insertion_function(struct exoplanet array[], int number_of_elements);
 

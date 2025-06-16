@@ -4,21 +4,15 @@
 #include <string.h>
 #include "exoplanet.h"
 
-// this function does the insertion sort and prints out the results
-void insertion_function(struct exoplanet array[], int number_of_elements) {
-    // perform insertion sort
-    struct_insertion_sort(array, number_of_elements);
-
-    printf("\n\nInsertion Sort Results:\n");
-
-    // print the first and last 10 elements in the sorted list
+// this function prints out the first and last 10 elements of a list
+void print_list(struct exoplanet array[], int number_of_elements, char *string) {
     // NOTE: the exoplanet's id will keep its original id it got assigned to when it was being stored into the unsorted list
-    printf("The first 10 struct elements in the SORTED list:\n");
+    printf("The first 10 struct elements in the %s list:\n", string);
     for (int i = 0; i < 10 && i < number_of_elements; i++) {
         printf("Row %d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", array[i].id, array[i].name, array[i].mass);
     }
 
-    printf("\nThe last 10 struct elements in the SORTED list:\n");
+    printf("\nThe last 10 struct elements in the %s list:\n", string);
     for (int i = number_of_elements - 10; i < 4389; i++) {
         printf("Row %d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", array[i].id, array[i].name, array[i].mass);
     }

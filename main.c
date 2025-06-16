@@ -18,24 +18,18 @@ int main(void) {
         return -1;
     }
 
-    // Print the first and last 10 elements in unsorted list
-    printf("The first 10 struct elements in the UNSORTED list:\n");
-    for (int i = 0; i < 10 && i < count; i++) {
-        printf("Row %d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", struct_array[i].id, struct_array[i].name, struct_array[i].mass);
-    }
-
-    printf("\nThe last 10 struct elements in the UNSORTED list:\n");
-    for (int i = count - 10; i < 4389; i++) {
-        printf("Row %d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", struct_array[i].id, struct_array[i].name, struct_array[i].mass);
-    }
+    // print the first and last 10 elements in unsorted list
+    print_list(struct_array, count, "UNSORTED");
 
     // create multiple copies of the unsorted list
     for (int i = 0; i < count; i++) {
         insertion_struct[i] = struct_array[i];
     }
 
-    // do insertion sort
-    insertion_function(insertion_struct, count);
+    // perform insertion sort
+    struct_insertion_sort(insertion_struct, count);
+    printf("\n\nInsertion Sort Results:\n");
+    print_list(insertion_struct, count, "SORTED");
 
     // exit the program
     return 0;
