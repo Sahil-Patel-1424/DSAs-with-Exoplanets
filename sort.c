@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "exoplanet.h"
 
 // this function prints out the first and last 10 elements of a list

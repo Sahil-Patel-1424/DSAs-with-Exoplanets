@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "exoplanet.h"
 
 // this function will load in the exoplanets csv data file

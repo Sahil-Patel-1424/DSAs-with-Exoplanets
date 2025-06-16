@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include  "exoplanet.h"
 
 #define MAX_PLANETS 4389    // this is the actual number of exoplanets in the csv file
@@ -11,6 +12,8 @@ int main(void) {
     struct exoplanet struct_array[MAX_PLANETS];      // a list of structs
     const char *file_name = "PS_2025.06.02_17.07.37 - PS_2025.06.02_17.07.37.csv";      // the csv file
     struct exoplanet insertion_struct[MAX_PLANETS];     // used for insertion sort
+    clock_t start, end;     // these are to calculate the start and end times for each algorithm
+    double cpu_time_used;   // this calculates the total computational time each algorithm used
 
     // load the csv file and return a number to see if the data was stored
     int count = load_exoplanets(file_name, struct_array, MAX_PLANETS);
@@ -27,8 +30,11 @@ int main(void) {
     }
 
     // perform insertion sort
+    start = clock();
     struct_insertion_sort(insertion_struct, count);
-    printf("\n\nInsertion Sort Results:\n");
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nInsertion Sort Results (Time (seconds): [%0.5f]):\n", cpu_time_used);
     print_list(insertion_struct, count, "SORTED");
 
     // exit the program
