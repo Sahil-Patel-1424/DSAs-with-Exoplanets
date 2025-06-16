@@ -6,10 +6,6 @@
 
 #define MAX_PLANETS 4389    // this is the actual number of exoplanets in the csv file
 
-// NOTE (6/2/2025) [FIXED]: The way the code is set up, the tokens will take in values from the wrong columns if there are missing values in the row.
-// NOTE (6/9/2025): Had to manually add in NULL values to the csv file. The code should store in the data correctly now. should be able to start writing algorithms now.
-// NOTE (6/15/2025): Created a regular insertion sort algorithm and another one that uses structs. Both work. Split the program's functionality into multiple files.
-
 int main(void) {
     // initialize variables
     struct exoplanet struct_array[MAX_PLANETS];      // a list of structs
