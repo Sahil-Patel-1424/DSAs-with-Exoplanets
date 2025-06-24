@@ -3,23 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <conio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include "exoplanet.h"
 
-// this function prints out the first and last 10 elements of a list
-void print_list(struct exoplanet array[], int number_of_elements, char *string) {
-    // NOTE: the exoplanet's id will keep its original id it got assigned to when it was being stored into the unsorted list
-    printf("The first 10 struct elements in the %s list:\n", string);
-    for (int i = 0; i < 10 && i < number_of_elements; i++) {
-        printf("Row %d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", array[i].id, array[i].name, array[i].mass);
-    }
-
-    printf("\nThe last 10 struct elements in the %s list:\n", string);
-    for (int i = number_of_elements - 10; i < 4389; i++) {
-        printf("Row %d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", array[i].id, array[i].name, array[i].mass);
-    }
-}
-
-// this is the insertion sort algorithm that uses structs
+// this function is the insertion sort algorithm that uses structs
 void struct_insertion_sort(struct exoplanet array[], int number_of_elements) {
     // create a variable to store a struct element
     struct exoplanet element;

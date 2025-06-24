@@ -3,7 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include  "exoplanet.h"
+#include <conio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include "exoplanet.h"
 
 #define MAX_PLANETS 4389    // this is the actual number of exoplanets in the csv file
 
@@ -29,6 +32,9 @@ int main(void) {
         insertion_struct[i] = struct_array[i];
     }
 
+    // create directory to store the results
+    create_directory();
+
     // perform insertion sort
     start = clock();
     struct_insertion_sort(insertion_struct, count);
@@ -36,6 +42,7 @@ int main(void) {
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("\n\nInsertion Sort Results (Time (seconds): [%0.5f]):\n", cpu_time_used);
     print_list(insertion_struct, count, "SORTED");
+    store_results(insertion_struct, count, "Insertion");
 
     // exit the program
     return 0;
