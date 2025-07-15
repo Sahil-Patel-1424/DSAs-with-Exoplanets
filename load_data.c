@@ -25,10 +25,10 @@ int load_exoplanets(const char *file_name, struct exoplanet array[], int max_cou
     // open the csv file
     FILE *fp = fopen(file_name, "r");
 
-    // this checks if the file could not be opened
+    // check if the file could not be opened and exit the program to prevent errors
     if (fp == NULL) {
         printf("Error: File could not be opened.\n");
-        exit(-1);   // exit the program so that it doesn't do anything weird
+        exit(-1);
     }
     else {
         printf("Success: File was opened.\n");
@@ -41,12 +41,12 @@ int load_exoplanets(const char *file_name, struct exoplanet array[], int max_cou
     int null_counter = 0;   // this counts the number of NULL values in a column
     int exo_counter = 0;    // this counts the number of exoplanets that have a non-NULL mass
 
-    // a loop that reads in each line from the csv file
+    // loop through each line in the csv file
     while ((fgets(line, sizeof(line), fp)) && (exo_counter < max_count)) {
         // start at line 20 since the previous lines is filled with comments
         if (line_counter > 19) {
             // initialize variables
-            char *token;        // this retrieve the comma separated value
+            char *token;        // this retrieves the comma separated value
             char *tokens[12];   // this stores the comma separated values
             int i = 0;          // incrementer
             
@@ -71,7 +71,7 @@ int load_exoplanets(const char *file_name, struct exoplanet array[], int max_cou
                 // store the data if the mass token has non-NULL value
                 array[exo_counter].id = exo_counter;
                 array[exo_counter].name = strdup(tokens[0]);
-                array[exo_counter].mass = atof(tokens[2]);    // Convert string to float
+                array[exo_counter].mass = atof(tokens[2]);    // convert string to float
 
                 exo_counter++;
             }
@@ -91,13 +91,13 @@ int load_exoplanets(const char *file_name, struct exoplanet array[], int max_cou
         printf("Success: Data from the file was stored.\n\n");
     }
 
-    // return the actual number of exoplanets
     return exo_counter;
 }
 
 // this function prints out the first and last 10 elements of a list
 void print_list(struct exoplanet array[], int number_of_elements, char *string) {
     // NOTE: the exoplanet's id will keep its original id it got assigned to when it was being stored into the unsorted list
+
     printf("The first 10 struct elements in the %s list:\n", string);
     for (int i = 0; i < 10 && i < number_of_elements; i++) {
         printf("Planet #%d: Planet Name = [%s], Planet Mass (Earth Mass) = [%0.9f]\n", array[i].id, array[i].name, array[i].mass);
@@ -131,10 +131,10 @@ void store_results(struct exoplanet array[], int number_of_elements, char *strin
     // open the file
     fp = fopen(file_name, "w");
 
-    // check if the file is opened
+    // check if the file is opened and exit the program to prevent errors
     if (fp == NULL) {
         printf("Error: File could not be opened.\n");
-        exit(-1);   // exit the program so that it doesn't do anything weird
+        exit(-1);
     }
     else {
         printf("Success: File was opened. Now storing the results in the txt file.\n");
