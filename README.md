@@ -17,3 +17,15 @@ The Insertion Sort algorithm is a straightforward sorting algorithm that sorts a
 Since the data I used is randomly ordered, the Time Complexity of this Insertion Sort algorithm is O(n<sup>2</sup>). The Insertion Sort algorithm is a simple and easy program to implement, but its efficiency drops as the list grows larger, especially when compared to other sorting algorithms.<br/><br/>
 
 More information on the Insertion Sort algorithm: https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/
+
+# Selection Sort
+The Selection Sort algorithm is a comparison-based sorting algorithm that sorts a list by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and swapping it with the first unsorted element. This process continues until the entire array is sorted:
+
+1. You start by finding the smallest element and swap it with the first element to get the smallest element at its correct position.
+2. Find the second smallest element and swap it with the second element.
+3. Continue this process until all elements are moved to their correct positions.
+
+<br>
+The Time Complexity of this Selection Sort algorithm is O(n<sup>2</sup>). The Selection Sort algorithm is a straightforward algorithm to implement; however, it does not maintain the relative order of equal elements making it not stable.
+
+More information on the Selection Sort algorithm: https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/
