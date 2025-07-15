@@ -26,6 +26,6 @@ The Selection Sort algorithm is a comparison-based sorting algorithm that sorts 
 3. Continue this process until all elements are moved to their correct positions.
 
 <br>
-The Time Complexity of this Selection Sort algorithm is O(n<sup>2</sup>). The Selection Sort algorithm is a straightforward algorithm to implement; however, it does not maintain the relative order of equal elements making it not stable.
+The Time Complexity of this Selection Sort algorithm is O(n<sup>2</sup>) as the data is randomly sorted. The Selection Sort algorithm is a straightforward algorithm to implement; however, it does not maintain the relative order of equal elements making it not stable.<br/><br/>
 
 More information on the Selection Sort algorithm: https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/
