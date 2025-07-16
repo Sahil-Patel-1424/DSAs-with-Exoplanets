@@ -57,3 +57,33 @@ void struct_selection_sort(struct exoplanet array[], int number_of_elements) {
 
     return;
 }
+
+// bubble sort algorithm function
+void struct_bubble_sort(struct exoplanet array[], int number_of_elements) {
+    // initialize variables
+    int swapped = 0;
+    
+    // loop through the array of structs
+    for (int i = 0; i < number_of_elements - 1; i++) {
+        swapped = 0;
+        for (int j = 0; j < number_of_elements - i - 1; j++) {
+            if (array[j].mass > array[j + 1].mass) {
+                // move the smallest element to its correct position
+                struct exoplanet temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+
+                swapped = 1;
+            }
+        }
+
+        // if no two elements were swapped in the inner loop then break out of the loop
+        if (swapped == 0) {
+            break;
+        }
+    }
+
+    
+
+    return;
+}

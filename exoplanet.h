@@ -15,5 +15,6 @@ void store_results(struct exoplanet array[], int number_of_elements, char *strin
 void create_directory();
 void struct_insertion_sort(struct exoplanet array[], int number_of_elements);
 void struct_selection_sort(struct exoplanet array[], int number_of_elements);
+void struct_bubble_sort(struct exoplanet array[], int number_of_elements);
 
 #endif

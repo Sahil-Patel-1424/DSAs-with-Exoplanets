@@ -16,6 +16,7 @@ int main(void) {
     const char *file_name = "PS_2025.06.02_17.07.37 - PS_2025.06.02_17.07.37.csv";      // the csv file
     struct exoplanet insertion_struct[MAX_PLANETS];                                     // used for insertion sort
     struct exoplanet selection_struct[MAX_PLANETS];                                     // used for selection sort
+    struct exoplanet bubble_struct[MAX_PLANETS];                                        // used for bubble sort
     clock_t start, end;                                                                 // these are to calculate the start and end times for each algorithm
     double cpu_time_used;                                                               // this calculates the total computational time each algorithm used
 
@@ -34,6 +35,7 @@ int main(void) {
     for (int i = 0; i < count; i++) {
         insertion_struct[i] = struct_array[i];
         selection_struct[i] = struct_array[i];
+        bubble_struct[i] = struct_array[i];
     }
 
     // this is for storing the results
@@ -56,6 +58,15 @@ int main(void) {
     printf("\n\nSelection Sort Results (Time (seconds): [%0.5f]):\n", cpu_time_used);
     print_list(selection_struct, count, "SORTED");
     store_results(selection_struct, count, "Selection");
+
+    // perform bubble sort
+    start = clock();
+    struct_bubble_sort(bubble_struct, count);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nBubble Sort Results (Time (seconds): [%0.5f]):\n", cpu_time_used);
+    print_list(bubble_struct, count, "SORTED");
+    store_results(bubble_struct, count, "Bubble");
 
     // exit the program
     return 0;
